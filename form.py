@@ -1,0 +1,33 @@
+from tkinter import *
+from tkinter import messagebox
+a=Tk()
+def sv():
+    f=open("s.txt",'a')
+    
+    E1=e1.get()
+    E2=e2.get()
+    f.write(".")
+    f.write(E1)
+    f.write(">>>")
+    f.write(E2)
+    f.write("\n")
+    messagebox.showinfo("Save","Data save successfully")
+    e1.delete(0,END)
+    e2.delete(0,END)
+   
+a.title("Student Form")
+a.config(bg="light pink")
+a.geometry("600x300")
+l1=Label(a,text="Student name:",font="Elephant 20",bg="light pink")
+l1.grid(row=1,column=1)
+e1=Entry(a,font="Gadugi 20",bg="peach puff")
+e1.grid(row=1,column=2)
+l2=Label(a,text="Address:",font="Elephant 20",bg="light pink")
+l2.grid(row=2,column=1)
+e2=Entry(a,font="Gadugi 20",bg="peach puff")
+e2.grid(row=2,column=2)
+bt1=Button(a,text="Save",bg="OliveDrab1",font="bold 18",command=sv)
+bt1.grid(row=3,column=1)
+bt2=Button(a,text="Exit",bg="Red2",font="bold 18")
+bt2.grid(row=3,column=2)
+a.mainloop()
